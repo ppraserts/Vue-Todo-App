@@ -1,0 +1,1 @@
+docker run --name website -p 8081:80 -v $(pwd)/dist:/usr/share/nginx/html:ro -d nginx:1.15.3

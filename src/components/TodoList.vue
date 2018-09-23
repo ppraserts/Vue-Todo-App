@@ -2,16 +2,19 @@
     <div class="wrapper">
         <header>Todo List</header>
         <main>
-            <b-field type="is-success" >
+            <b-field
+                grouped
+                type="is-success"
+            >
                 <b-input
                     v-model="task"
                     maxlength="30"
                 />
+                <button
+                    class="button is-primary"
+                    @click="addNewTask"
+                >Add new Task!</button>
             </b-field>
-            <button
-                class="button is-primary"
-                @click="addNewTask"
-            >Add new Task!</button>
             <ul>
                 <li
                     v-for="(item, index) of taskList"
@@ -72,7 +75,7 @@ export default {
     transform: translate(-50%, -50%);
     & > header {
         font-size: 1.8em;
-        background-color: #ccc;
+        text-align: left;
         color: #000;
     }
     & > main {
@@ -82,9 +85,6 @@ export default {
             background-color: #7957d5;
             border-color: transparent;
             color: #fff;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
         }
         li {
             border: 1px solid #ccc;
